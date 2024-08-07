@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Logo = () => {
   return (
     <Image
-      src={"/logo.png"}
+      src={"/assets/img/header/logo.svg"}
       width={36}
       height={36}
       priority

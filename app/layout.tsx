@@ -1,15 +1,17 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+// import "./main.js";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Mediacy",
-  description: "Description of my landing page",
+  title: "ParcelDelivery",
+  description: "Description of my landing page to delivery parcel",
 };
 
 export default function RootLayout({
