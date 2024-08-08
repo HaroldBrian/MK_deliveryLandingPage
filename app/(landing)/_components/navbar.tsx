@@ -115,7 +115,7 @@ export const Navbar = () => {
                     >
                       <NavigationMenuLink
                         href={item.href}
-                        className="text-base font-medium "
+                        className="text-base font-medium"
                       >
                         {item.name}
                       </NavigationMenuLink>
@@ -154,9 +154,10 @@ export const Navbar = () => {
 
         closeBtn.addEventListener("click", () => {
         if (mobileNav.classList.contains(navClosedClass)) {
-          mobileNav.classList.remove("-left-[300px]");
-          mobileNav.classList.add("left-0");
+          mobileNav.classList.toggle("left-0");
+          mobileNav.classList.toggle("-left-[300px]");
         }else{
+          mobileNav.classList.toggle("left-0");
           mobileNav.classList.toggle("-left-[300px]");
         }
         })

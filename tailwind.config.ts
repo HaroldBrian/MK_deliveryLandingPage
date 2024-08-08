@@ -61,11 +61,11 @@ const config = {
         custom2: "0px 0px 30px 0px rgba(8, 73, 81, 0.06)",
       },
       backgroundImage: {
-        services: "url(./assets/img/services/bg.svg)",
-        testimonials: "url(./assets/img/testimonials/bg.svg)",
-        departments: "url(./assets/img/departments/bg.svg)",
-        quoteLeft: "url(./assets/img/testimonials/quote-left.svg)",
-        quoteRight: "url(./assets/img/testimonials/quote-right.svg)",
+        services: "url(../public/assets/img/services/bg.svg)",
+        testimonials: "url(../public/assets/img/testimonials/bg.svg)",
+        departments: "url(../public/assets/img/departments/bg.svg)",
+        quoteLeft: "url(../public/assets/icons/testimonials/quote-left.svg)",
+        quoteRight: "url(../public/assets/icons/testimonials/quote-right.svg)",
       },
       borderRadius: {
         lg: "var(--radius)",
