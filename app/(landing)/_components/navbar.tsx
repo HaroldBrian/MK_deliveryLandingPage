@@ -16,6 +16,7 @@ import {
   RiPhoneFill,
   RiSearchLine,
 } from "@remixicon/react";
+
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },

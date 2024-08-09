@@ -1,18 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { RiHeartPulseLine } from "@remixicon/react";
+import ScrollReveal from "scrollreveal";
+import { Revealconfig } from "../_config/revealConfig";
 
 export const Hero = () => {
+  ScrollReveal().reveal(".hero__text", Revealconfig);
+  // ScrollReveal().reveal(".hero__img", Revealconfig);
+
   return (
-    <section className="hero bg-grey py-16 xl:pt-12 xl:pb-0 overflow-hidden">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between h-full">
-          <HeroLeft />
-          <HeroRight />
+    <>
+      <section className="hero bg-grey py-16 xl:pt-12 xl:pb-0 overflow-hidden">
+        <div className="container mx-auto h-full">
+          <div className="flex flex-col xl:flex-row items-center justify-between h-full">
+            <HeroLeft />
+            <HeroRight />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -1,3 +1,6 @@
+import ScrollReveal from "scrollreveal";
+import { Revealconfig2 } from "../_config/revealConfig";
+
 export const Stats = () => {
   const stats = [
     { counter: "+5120", label: "Happy Patients" },
@@ -5,6 +8,8 @@ export const Stats = () => {
     { counter: "+53", label: "Senior Doctors" },
     { counter: "+10", label: "Years Experience" },
   ];
+
+  ScrollReveal().reveal(".stats__item", Revealconfig2);
 
   return (
     <section className="stats section">
