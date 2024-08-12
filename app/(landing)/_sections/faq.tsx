@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { RiAddFill, RiSubtractFill } from "@remixicon/react";
+import Fade from "react-reveal/Fade";
 import Script from "next/script";
 
 const faqItems = [
@@ -29,27 +30,37 @@ export const Faq = () => {
     <>
       <section className="faq">
         <div className="container mx-auto">
-          <h2 className="faq__title h2 mb-[50px] text-center">
-            We're got answers
-          </h2>
+          <Fade bottom duration={3000} delay={600} distance="60px">
+            <h2 className="faq__title h2 mb-[50px] text-center">
+              We're got answers
+            </h2>
+          </Fade>
           <div className="max-w-5xl mx-auto">
             {faqItems.map((item, index) => (
-              <div
-                className="faq__item px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+              <Fade
                 key={index}
+                bottom
+                duration={3000}
+                delay={index * 600}
+                distance="100px"
               >
-                <div className="flex items-center justify-between mb-[10px]">
-                  <h4 className="h4">{item.question}</h4>
+                <div
+                  className="faq__item px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+                  key={index}
+                >
+                  <div className="flex items-center justify-between mb-[10px]">
+                    <h4 className="h4">{item.question}</h4>
 
-                  <div className="faq__btn text-accent">
-                    <RiAddFill className="text-2xl faq__btn-icon-active" />
-                    <RiSubtractFill className="text-2xl faq__btn-icon-inactive hidden" />
+                    <div className="faq__btn text-accent">
+                      <RiAddFill className="text-2xl faq__btn-icon-active" />
+                      <RiSubtractFill className="text-2xl faq__btn-icon-inactive hidden" />
+                    </div>
+                  </div>
+                  <div className="faq__answer h-0 overflow-hidden">
+                    <p className="font-light">{item.answer}</p>
                   </div>
                 </div>
-                <div className="faq__answer h-0 overflow-hidden">
-                  <p className="font-light">{item.answer}</p>
-                </div>
-              </div>
+              </Fade>
             ))}
           </div>
         </div>

@@ -1,5 +1,4 @@
-import ScrollReveal from "scrollreveal";
-import { Revealconfig2 } from "../_config/revealConfig";
+import Fade from "react-reveal/Fade";
 
 export const Stats = () => {
   const stats = [
@@ -9,22 +8,29 @@ export const Stats = () => {
     { counter: "+10", label: "Years Experience" },
   ];
 
-  ScrollReveal().reveal(".stats__item", Revealconfig2);
-
   return (
     <section className="stats section">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-y-6 justify-between">
           {stats.map((stat, index) => (
-            <div
-              className="stats__item flex-1 xl:border-r flex flex-col items-center"
+            <Fade
               key={index}
+              top
+              delay={index * 600}
+              distance="100px"
+              interval={100}
+              duration={3000}
             >
-              <div className="text-4xl xl:text-[64px] font-semibold text-accent-tertiary xl:mb-2">
-                {stat.counter}
+              <div
+                className="stats__item flex-1 xl:border-r flex flex-col items-center"
+                key={index}
+              >
+                <div className="text-4xl xl:text-[64px] font-semibold text-accent-tertiary xl:mb-2">
+                  {stat.counter}
+                </div>
+                <div>{stat.label}</div>
               </div>
-              <div>{stat.label}</div>
-            </div>
+            </Fade>
           ))}
         </div>
       </div>

@@ -1,13 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { RiHeartPulseLine } from "@remixicon/react";
-import ScrollReveal from "scrollreveal";
-import { Revealconfig } from "../_config/revealConfig";
-
+import Fade from "react-reveal/Fade";
+import config from "react-reveal/globals";
+config({
+  ssrFadeConfig: {
+    top,
+    duration: 3000,
+    distance: "60px",
+    delay: 600,
+  },
+});
 export const Hero = () => {
-  ScrollReveal().reveal(".hero__text", Revealconfig);
-  // ScrollReveal().reveal(".hero__img", Revealconfig);
-
   return (
     <>
       <section className="hero bg-grey py-16 xl:pt-12 xl:pb-0 overflow-hidden">
@@ -25,8 +29,10 @@ export const Hero = () => {
 const HeroLeft = () => {
   return (
     <div className="hero__text xl:w-[48%] text-center xl:text-left py-6">
-      <HeroInfo />
-      <HeroDL />
+      <Fade top duration={3000} delay={600} distance="60px">
+        <HeroInfo />
+        <HeroDL />
+      </Fade>
     </div>
   );
 };
@@ -92,14 +98,16 @@ const HeroDL = () => {
 const HeroRight = () => {
   return (
     <div className="hero__img hidden xl:flex max-w-[814px] self-end">
-      <Image
-        src={"/assets/img/hero/img.png"}
-        width={450}
-        height={450}
-        priority
-        alt={"hero-image"}
-        className="cursor-pointer w-auto h-auto"
-      />
+      <Fade bottom duration={3000} delay={600} distance="60px">
+        <Image
+          src={"/assets/img/hero/img.png"}
+          width={450}
+          height={450}
+          priority
+          alt={"hero-image"}
+          className="cursor-pointer w-auto h-auto"
+        />
+      </Fade>
     </div>
   );
 };

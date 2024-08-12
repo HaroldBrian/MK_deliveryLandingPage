@@ -8,7 +8,6 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { Logo } from "@/components/ui/logo";
-import { Button } from "@/components/ui/button";
 import Script from "next/script";
 import {
   RiArrowRightSLine,

@@ -1,14 +1,13 @@
 import Image from "next/image";
-// import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+
+import Fade from "react-reveal/Fade";
 
 const testimonialItems = [
   {
@@ -33,12 +32,16 @@ const testimonialItems = [
 export const Testimonials = () => {
   return (
     <section className="testimonial bg-testimonials bg-cover bg-right bg-no-repeat py-12 xl:min-h-[595px] xl:py-0">
-      <div className="testimonial__container container mx-auto">
-        <div className="flex flex-col xl:flex-row items-center gap-x-14">
-          <TestimonialBackground />
-          <TestimonialItems />
+      <Fade bottom duration={3000} delay={600} distance="60px">
+        <div className="testimonial__container container mx-auto">
+          <Fade bottom duration={3000} delay={800} distance="60px">
+            <div className="flex flex-col xl:flex-row items-center gap-x-14">
+              <TestimonialBackground />
+              <TestimonialItems />
+            </div>
+          </Fade>
         </div>
-      </div>
+      </Fade>
     </section>
   );
 };
