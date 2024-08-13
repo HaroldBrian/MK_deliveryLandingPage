@@ -10,18 +10,19 @@ import {
 import { Logo } from "@/components/ui/logo";
 import Script from "next/script";
 import {
-  RiArrowRightSLine,
+  RiCloseLine,
   RiMapPin2Fill,
+  RiMenu2Line,
   RiPhoneFill,
   RiSearchLine,
 } from "@remixicon/react";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Customers", href: "/customers" },
-  { name: "Contact", href: "/contact" },
-  { name: "Pricing", href: "/pricing" },
+  { name: "Accueil", href: "/" },
+  { name: "A Propos", href: "/about" },
+  { name: "Aide", href: "/help" },
+  { name: "Forfait", href: "/pricing" },
+  { name: "Rejoignez-nous", href: "/register" },
 ];
 
 export const Navbar = () => {
@@ -40,7 +41,7 @@ export const Navbar = () => {
             {/* Location */}
             <div className="flex items-center justify-center gap-x-2 lg:justify-normal">
               <RiMapPin2Fill className="text-2xl text-accent" />
-              <div className="text-secondary">123 Arling, Miola, NY</div>
+              <div className="text-secondary">Yaoundé, Cameroun</div>
             </div>
             {/* Phone */}
             <div className="flex items-center justify-center gap-x-2 lg:justify-normal">
@@ -48,15 +49,16 @@ export const Navbar = () => {
               <div className="text-secondary">(+237) 697 438 841</div>
             </div>
             {/* btn */}
-            <button className="btn btn-sm btn-outline w-[240px] lg:w-auto mx-auto lg:mx-0">
-              Book now
+            <button className="btn btn-sm btn-outline w-60 lg:w-auto mx-auto lg:mx-0">
+              Commencer
             </button>
 
             {/* mobile nav */}
             <div className="mnav bg-white fixed w-[300px] top-0 h-screen -left-[300px] shadow-2xl lg:hidden transition-all duration-300 z-20 ">
               {/* nav trigger btn */}
-              <div className="mnav__close-btn bg-primary w-8 h-8 relative -right-full top-8 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
-                <RiArrowRightSLine className="mnav__close-btn-icon text-2xl text-white" />
+              <div className="mnav__close-btn bg-primary w-12 h-12 relative -right-full top-8 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
+                <RiMenu2Line className="mnav__close-btn-icon text-2xl text-white" />
+                <RiCloseLine className="mnav__close-btn-icon-close text-2xl text-white hidden" />
               </div>
 
               {/* logo, list, form */}
@@ -69,16 +71,13 @@ export const Navbar = () => {
                 {/* list */}
 
                 <NavigationMenu className="flex flex-col gap-y-5 justify-start items-start space-y-10">
-                  <NavigationMenuList className="flex flex-col space-y-10 font-light text-xs items-start">
+                  <NavigationMenuList className="flex flex-col space-y-8 font-medium text-sm items-start space-x-0">
                     {navigation.map((item) => (
                       <NavigationMenuItem
                         key={item.name}
                         className="cursor-pointer text-secondary hover:text-accent transition-all duration-300"
                       >
-                        <NavigationMenuLink
-                          href={item.href}
-                          className="text-base font-medium "
-                        >
+                        <NavigationMenuLink href={item.href}>
                           {item.name}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
@@ -105,18 +104,16 @@ export const Navbar = () => {
               </div>
             </div>
 
-            <div className="bg-white absolute w-full left-0 top-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:justify-between lg:px-[50px]">
+            {/* desktop nav */}
+            <div className="bg-white absolute w-full left-0 top-[80px] shadow-custom1 h-16 rounded-lg hidden lg:flex lg:items-center lg:justify-between lg:px-[50px]">
               <NavigationMenu className="w-full max-w-[1200px] justify-between">
-                <NavigationMenuList className="flex justify-between items-center font-light space-x-14 text-xs">
+                <NavigationMenuList className="flex justify-between items-center font-medium space-x-14 text-sm">
                   {navigation.map((item) => (
                     <NavigationMenuItem
                       key={item.name}
                       className="cursor-pointer text-secondary hover:text-accent transition-all duration-300"
                     >
-                      <NavigationMenuLink
-                        href={item.href}
-                        className="text-base font-medium"
-                      >
+                      <NavigationMenuLink href={item.href}>
                         {item.name}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
@@ -151,14 +148,23 @@ export const Navbar = () => {
         const closeBtn = document.querySelector(".mnav__close-btn");
         const navOpenedClass = "left-0";
         const navClosedClass = "-left-[300px]";
+        
+        const iconActiveElement = document.querySelector(".mnav__close-btn-icon");
+        const iconInactiveElement = document.querySelector(".mnav__close-btn-icon-close");
 
         closeBtn.addEventListener("click", () => {
         if (mobileNav.classList.contains(navClosedClass)) {
-          mobileNav.classList.toggle("left-0");
-          mobileNav.classList.toggle("-left-[300px]");
+          
+        mobileNav.classList.toggle("left-0");
+        mobileNav.classList.toggle("-left-[300px]");
+        iconActiveElement.classList.add("hidden");
+        iconInactiveElement.classList.remove("hidden");
         }else{
-          mobileNav.classList.toggle("left-0");
-          mobileNav.classList.toggle("-left-[300px]");
+          
+        mobileNav.classList.toggle("left-0");
+        mobileNav.classList.toggle("-left-[300px]");
+        iconActiveElement.classList.remove("hidden");
+        iconInactiveElement.classList.add("hidden");
         }
         })
         `}

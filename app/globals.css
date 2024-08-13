@@ -9,7 +9,7 @@ body,
 }
 
 body {
-  @apply text-secondary font-primary text-[17px] leading-8;
+  @apply text-secondary font-primary text-[16px] leading-8;
 }
 
 h1,
@@ -22,19 +22,19 @@ h6 {
 }
 
 .h1 {
-  @apply text-[36px] xl:text-[64px] font-semibold;
+  @apply text-[30px] xl:text-[60px] font-semibold;
 }
 
 .h2 {
-  @apply text-[30px] xl:text-[44px] font-semibold capitalize tracking-[0.44px];
+  @apply text-[24px] xl:text-[36px] font-semibold capitalize tracking-[0.44px];
 }
 
 .h3 {
-  @apply text-[20px] xl:text-[26px] font-semibold;
+  @apply text-[18px] xl:text-[24px] font-semibold;
 }
 
 .h4 {
-  @apply text-[20px] xl:text-[26px] font-semibold capitalize;
+  @apply text-[18px] xl:text-[24px] font-semibold capitalize;
 }
 
 .btn {
@@ -42,11 +42,11 @@ h6 {
 }
 
 .btn-sm {
-  @apply h-14 px-10;
+  @apply h-12 px-10;
 }
 
 .btn-lg {
-  @apply h-16 px-[50px];
+  @apply h-14 px-[40px];
 }
 
 .btn-accent {

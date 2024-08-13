@@ -5,22 +5,22 @@ import Script from "next/script";
 
 const faqItems = [
   {
-    question: "Why to believe in Insove medical healthcare ?",
+    question: "Comment les colis sont récupérés par nous ?",
+    answer:
+      "Dépôt en Point Relais : Le client a la possibilité de déposer ses colis dans l'un des 120 points relais, qui proposent des horaires étendus. De plus, nous mettons à disposition 40 courtiers, accessibles 7 jours sur 7, 24 heures sur 24, offrant ainsi une grande flexibilité pour le dépôt et la récupération des colis",
+  },
+  {
+    question: "Comment sont gérés les bordereaux de livraison ?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae, et earum velit provident aliquam reprehenderit quos similique a voluptas quasi nemo ipsum omnis aperiam nostrum libero quisquam aspernatur deserunt!",
   },
   {
-    question: "Why to believe in Insove medical healthcare ?",
+    question: "Comment se passe la gestion des retours ?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae, et earum velit provident aliquam reprehenderit quos similique a voluptas quasi nemo ipsum omnis aperiam nostrum libero quisquam aspernatur deserunt!",
   },
   {
-    question: "Why to believe in Insove medical healthcare ?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae, et earum velit provident aliquam reprehenderit quos similique a voluptas quasi nemo ipsum omnis aperiam nostrum libero quisquam aspernatur deserunt!",
-  },
-  {
-    question: "Why to believe in Insove medical healthcare ?",
+    question: "comment puis-je suivre la livraison de mes colis ?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae, et earum velit provident aliquam reprehenderit quos similique a voluptas quasi nemo ipsum omnis aperiam nostrum libero quisquam aspernatur deserunt!",
   },
@@ -28,11 +28,11 @@ const faqItems = [
 export const Faq = () => {
   return (
     <>
-      <section className="faq">
+      <section className="faq bg-accent py-16 mb-12 min-h-[85vh]">
         <div className="container mx-auto">
-          <Fade bottom duration={3000} delay={600} distance="60px">
-            <h2 className="faq__title h2 mb-[50px] text-center">
-              We're got answers
+          <Fade bottom duration={2000} delay={600} distance="60px">
+            <h2 className="faq__title h2 mb-[50px] text-center text-white">
+              Questions fréquemment posées
             </h2>
           </Fade>
           <div className="max-w-5xl mx-auto">
@@ -40,16 +40,18 @@ export const Faq = () => {
               <Fade
                 key={index}
                 bottom
-                duration={3000}
-                delay={index * 600}
+                duration={2000}
+                delay={(index + 1) * 400}
                 distance="100px"
               >
                 <div
-                  className="faq__item px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+                  className="faq__item px-[30px] pt-4 pb-1 mb-6 cursor-pointer select-none rounded-lg bg-white"
                   key={index}
                 >
                   <div className="flex items-center justify-between mb-[10px]">
-                    <h4 className="h4">{item.question}</h4>
+                    <h4 className=" font-semibold text-[18px]">
+                      {item.question}
+                    </h4>
 
                     <div className="faq__btn text-accent">
                       <RiAddFill className="text-2xl faq__btn-icon-active" />

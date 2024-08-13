@@ -6,16 +6,16 @@ export const Appointment = () => {
   return (
     <section className="appointment section">
       <div className="container mx-auto">
-        <Fade bottom duration={3000} delay={600} distance="60px">
-          <h2 className="appointment__title h2 mb-5 xl:mb-[50px] text-center xl:text-left">
-            Book Appointment or call :{" "}
-            <span className="text-accent-tertiary">(+123) 456-7890</span>
+        <Fade bottom duration={2000} delay={600} distance="60px">
+          <h2 className="appointment__title h2 mb-5 lg:mb-[50px] text-center lg:text-left">
+            Rejoignez-nous ou appelez nous :{" "}
+            <span className="text-accent-secondary">(+237) 697 438 841</span>
           </h2>
         </Fade>
 
-        <Zoom duration={2000} delay={600} distance="60px">
+        <Zoom duration={2000} delay={900} distance="60px">
           <form className="appointment__form flex flex-col gap-y-5">
-            <div className="flex flex-col xl:flex-row gap-5">
+            <div className="flex flex-col lg:flex-row gap-5">
               <div className="select relative flex items-center">
                 <div className="absolute right-4">
                   <RiArrowDownSLine className="text-[26px] text-primary" />
@@ -41,16 +41,16 @@ export const Appointment = () => {
                 </select>
               </div>
             </div>
-            <div className="flex flex-col xl:flex-row gap-5">
+            <div className="flex flex-col lg:flex-row gap-5">
               <input type="text" className="input" placeholder="Full Name" />
               <input type="text" className="input" placeholder="Phone Number" />
             </div>
-            <div className="flex flex-col xl:flex-row gap-5">
+            <div className="flex flex-col lg:flex-row gap-5">
               <input type="date" className="input" />
               <input type="time" className="input" />
             </div>
             <button className="btn btn-lg btn-accent self-start" type="submit">
-              Book an appointment
+              Créez un Compte Gratuitement
             </button>
           </form>
         </Zoom>

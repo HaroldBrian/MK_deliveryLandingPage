@@ -14,11 +14,9 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "960px",
-        xl: "1330px",
-        "2xl": "1400px",
+        sm: "768px",
+        md: "992px",
+        lg: "1200px",
       },
     },
     extend: {
@@ -26,9 +24,9 @@ const config = {
         primary: "#242a2b",
         secondary: "#808080",
         accent: {
-          DEFAULT: "#1cbccf",
-          secondary: "#18abbc",
-          tertiary: "#90c6cd",
+          DEFAULT: "#003ecb",
+          secondary: "#0057ff",
+          tertiary: "#0C8AE4",
         },
         grey: "#e8f0f1",
         border: "hsl(var(--border))",
@@ -61,7 +59,6 @@ const config = {
         custom2: "0px 0px 30px 0px rgba(8, 73, 81, 0.06)",
       },
       backgroundImage: {
-        services: "url(../public/assets/img/services/bg.svg)",
         testimonials: "url(../public/assets/img/testimonials/bg.svg)",
         departments: "url(../public/assets/img/departments/bg.svg)",
         quoteLeft: "url(../public/assets/icons/testimonials/quote-left.svg)",

@@ -31,11 +31,11 @@ const testimonialItems = [
 ];
 export const Testimonials = () => {
   return (
-    <section className="testimonial bg-testimonials bg-cover bg-right bg-no-repeat py-12 xl:min-h-[595px] xl:py-0">
-      <Fade bottom duration={3000} delay={600} distance="60px">
+    <section className="testimonial bg-testimonials bg-cover bg-right bg-no-repeat py-12 lg:min-h-[595px] lg:py-0">
+      <Fade bottom duration={2000} delay={600} distance="60px">
         <div className="testimonial__container container mx-auto">
-          <Fade bottom duration={3000} delay={800} distance="60px">
-            <div className="flex flex-col xl:flex-row items-center gap-x-14">
+          <Fade bottom duration={2000} delay={900} distance="60px">
+            <div className="flex flex-col lg:flex-row items-center gap-x-14">
               <TestimonialBackground />
               <TestimonialItems />
             </div>
@@ -48,7 +48,7 @@ export const Testimonials = () => {
 
 const TestimonialBackground = () => {
   return (
-    <div className="hidden xl:flex">
+    <div className="hidden lg:flex">
       <Image
         src={"/assets/img/testimonials/img.png"}
         width={500}
@@ -61,7 +61,7 @@ const TestimonialBackground = () => {
 
 const TestimonialItems = () => {
   return (
-    <div className="max-w-[98%] xl:max-w-[710px]">
+    <div className="max-w-[98%] lg:max-w-[710px]">
       <Swiper
         // className="h-[400px]"
         // install Swiper modules
@@ -77,17 +77,17 @@ const TestimonialItems = () => {
         {testimonialItems.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="h-full flex flex-col justify-center items-start mx-14">
-              <div className="max-w-[680px] mx-auto text-center xl:text-left">
+              <div className="max-w-[680px] mx-auto text-center lg:text-left">
                 <p
-                  className="font-light relative text-[22px] text-[#4c5354] leading-[190%] text-center xl:text-left before:bg-quoteLeft before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-7 before:h-7 before:bg-no-repeat
-          after:bg-quoteRight after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-7 after:h-7 after:bg-no-repeat mb-7"
+                  className="font-light relative text-[20px] text-primary leading-[170%] text-center lg:text-left before:bg-quoteLeft before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-6 before:h-6 before:bg-no-repeat
+          after:bg-quoteRight after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-6 after:h-6 after:bg-no-repeat mb-7"
                 >
                   <span className="mx-2">{item.testimonial}</span>
                 </p>
-                <div className="text-[26px] text-[#4c5354] font-semibold">
+                <div className="text-[24px] text-primary font-semibold">
                   {item.author}
                 </div>
-                <div className="text-[#9ab4b7] font-medium uppercase tracking-[2.24px]">
+                <div className="text-greyAccent font-medium uppercase tracking-[2.24px]">
                   {item.type}
                 </div>
               </div>
