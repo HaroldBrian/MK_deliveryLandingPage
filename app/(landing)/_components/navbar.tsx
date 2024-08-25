@@ -16,16 +16,41 @@ import {
   RiPhoneFill,
   RiSearchLine,
 } from "@remixicon/react";
-
-const navigation = [
-  { name: "Accueil", href: "/" },
-  { name: "A Propos", href: "/about" },
-  { name: "Aide", href: "/help" },
-  { name: "Forfait", href: "/pricing" },
-  { name: "Rejoignez-nous", href: "/register" },
-];
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const pathname = usePathname();
+
+  const paths = [
+    {
+      id: 1,
+      path: "/",
+      title: "Accueil",
+    },
+    {
+      id: 2,
+      path: "/about",
+      title: "A Propos",
+    },
+    {
+      id: 3,
+      path: "/help",
+      title: "Aide",
+    },
+    {
+      id: 4,
+      path: "/pricing",
+      title: "Forfait",
+    },
+    {
+      id: 5,
+      path: "/auth/signup",
+      title: "Rejoignez-nous",
+    },
+  ];
+
   return (
     <>
       <div className="py-8 lg:pt-6 lg:pb-14">
@@ -49,9 +74,12 @@ export const Navbar = () => {
               <div className="text-secondary">(+237) 697 438 841</div>
             </div>
             {/* btn */}
-            <button className="btn btn-sm btn-outline w-60 lg:w-auto mx-auto lg:mx-0">
-              Commencer
-            </button>
+            <Link
+              href="/auth/signin"
+              className="btn btn-sm btn-outline w-60 lg:w-auto mx-auto lg:mx-0"
+            >
+              Connexion
+            </Link>
 
             {/* mobile nav */}
             <div className="mnav bg-white fixed w-[300px] top-0 h-screen -left-[300px] shadow-2xl lg:hidden transition-all duration-300 z-20 ">
@@ -71,14 +99,18 @@ export const Navbar = () => {
                 {/* list */}
 
                 <NavigationMenu className="flex flex-col gap-y-5 justify-start items-start space-y-10">
-                  <NavigationMenuList className="flex flex-col space-y-8 font-medium text-sm items-start space-x-0">
-                    {navigation.map((item) => (
+                  <NavigationMenuList className="flex flex-col space-y-8 font-semibold text-sm items-start space-x-0">
+                    {paths.map((item) => (
                       <NavigationMenuItem
-                        key={item.name}
-                        className="cursor-pointer text-secondary hover:text-accent transition-all duration-300"
+                        key={item.id}
+                        className={`cursor-pointer capitalize  ${
+                          pathname === item.path
+                            ? "text-accent"
+                            : "text-secondary"
+                        } hover:text-accent transition-all duration-300`}
                       >
-                        <NavigationMenuLink href={item.href}>
-                          {item.name}
+                        <NavigationMenuLink href={item.path}>
+                          {item.title}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                     ))}
@@ -107,14 +139,18 @@ export const Navbar = () => {
             {/* desktop nav */}
             <div className="bg-white absolute w-full left-0 top-[80px] shadow-custom1 h-16 rounded-lg hidden lg:flex lg:items-center lg:justify-between lg:px-[50px]">
               <NavigationMenu className="w-full max-w-[1200px] justify-between">
-                <NavigationMenuList className="flex justify-between items-center font-medium space-x-14 text-sm">
-                  {navigation.map((item) => (
+                <NavigationMenuList className="flex justify-between items-center font-semibold space-x-14 text-sm">
+                  {paths.map((item) => (
                     <NavigationMenuItem
-                      key={item.name}
-                      className="cursor-pointer text-secondary hover:text-accent transition-all duration-300"
+                      key={item.id}
+                      className={`cursor-pointer capitalize  ${
+                        pathname === item.path
+                          ? "text-accent"
+                          : "text-secondary"
+                      } hover:text-accent transition-all duration-300`}
                     >
-                      <NavigationMenuLink href={item.href}>
-                        {item.name}
+                      <NavigationMenuLink href={item.path}>
+                        {item.title}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
