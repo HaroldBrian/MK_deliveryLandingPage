@@ -7,14 +7,14 @@ export const Blog = () => {
   return (
     <section className="blog">
       <div className="container mx-auto">
-        <Fade bottom duration={2000} delay={600} distance="60px">
+        <Fade bottom duration={1500} delay={500} distance="60px">
           <h2 className="blog__title h2 mb-[50px] text-center lg:text-left">
             Pourquoi Choisir Notre Plateforme ?
           </h2>
         </Fade>
 
         <div className="flex flex-col lg:flex-row gap-y-6 space-x-2 lg:gap-y-0 items-center lg:justify-between mb-[50px]">
-          <Fade bottom duration={2000} delay={900} distance="100px">
+          <Fade bottom duration={1500} delay={700} distance="100px">
             <div className="blog__post max-w-[300px] shadow-lg shadow-slate-200 rounded-[10px] overflow-hidden cursor-pointer group">
               <div className="relative overflow-hidden">
                 <Image

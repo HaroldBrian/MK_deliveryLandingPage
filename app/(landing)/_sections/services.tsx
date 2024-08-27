@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
-import Flip from "react-reveal/Flip";
 
 const serviceItems = [
   {
@@ -31,7 +30,7 @@ const serviceItems = [
 export const Services = () => {
   return (
     <section className="services">
-      <Fade bottom duration={2000} delay={600} distance="60px">
+      <Fade bottom duration={1500} delay={500} distance="60px">
         <ServiceBackground />
         <ServiceItems />
       </Fade>
@@ -52,7 +51,7 @@ const ServiceBackground = () => {
       </div>
       <div className="container mx-auto">
         <div className="services__top flex items-center flex-col lg:flex-row lg:mb-[60px]">
-          <Fade bottom duration={2000} delay={600} distance="60px">
+          <Fade bottom duration={1500} delay={500} distance="60px">
             <h2 className="h2 text-white flex-1 mb-4 lg:mb-0 text-center lg:text-left">
               Des Services de Livraison Adaptés à Vos Besoins
             </h2>
@@ -74,13 +73,13 @@ const ServiceItems = () => {
     <div className="container mx-auto mt-8 lg:-mt-[144px]">
       <div className="grid lg:grid-cols-4 gap-5 px-8 lg:px-0">
         {serviceItems.map((item, index) => (
-          <Flip
+          <Fade
             key={index}
             bottom
-            delay={(index + 1) * 600}
+            delay={(index + 1) * 500}
             distance="100px"
             interval={100}
-            duration={2000}
+            duration={1500}
           >
             <div
               className="services__item bg-white p-8 rounded-lg shadow-lg border-b min-h-[288px] flex flex-col items-center text-center"
@@ -99,7 +98,7 @@ const ServiceItems = () => {
                 {item.description}
               </p>
             </div>
-          </Flip>
+          </Fade>
         ))}
       </div>
     </div>

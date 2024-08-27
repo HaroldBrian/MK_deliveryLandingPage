@@ -30,7 +30,7 @@ export const Faq = () => {
     <>
       <section className="faq bg-accent py-16 mb-12 min-h-[85vh]">
         <div className="container mx-auto">
-          <Fade bottom duration={2000} delay={600} distance="60px">
+          <Fade bottom duration={1500} delay={500} distance="60px">
             <h2 className="faq__title h2 mb-[50px] text-center text-white">
               Questions fréquemment posées
             </h2>
@@ -40,8 +40,8 @@ export const Faq = () => {
               <Fade
                 key={index}
                 bottom
-                duration={2000}
-                delay={(index + 1) * 400}
+                duration={1500}
+                delay={(index + 1) * 300}
                 distance="100px"
               >
                 <div

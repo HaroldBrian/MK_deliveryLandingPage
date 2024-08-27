@@ -7,6 +7,7 @@ import {
   RiFacebookCircleFill,
   RiGoogleFill,
 } from "@remixicon/react";
+import Link from "next/link";
 
 const SignIn: React.FC = () => {
   return (
@@ -23,10 +24,12 @@ const SignIn: React.FC = () => {
             className="rounded-2xl"
             alt=""
           />
-          <Button className="rounded-full flex justify-center items-center hover:bg-secondary bg-white gap-x-2 w-full mt-4 text-secondary hover:text-white font-semibold text-md duration-300">
-            <RiArrowUpCircleFill />
-            Retouner à l'accueil
-          </Button>
+          <Link href="/">
+            <Button className="rounded-full flex justify-center items-center hover:bg-secondary bg-white gap-x-2 w-full mt-4 text-secondary hover:text-white text-sm duration-300">
+              <RiArrowUpCircleFill />
+              Retouner à l'accueil
+            </Button>
+          </Link>
         </div>
         <div className="md:w-3/5 px-28 bg-white p-5 rounded-2xl rounded-tl-3xl rounded-bl-3xl">
           <h2 className="font-bold text-2xl mt-8 text-black">
@@ -52,27 +55,27 @@ const SignIn: React.FC = () => {
               type="name"
               name="name"
               placeholder="Votre nom complet"
-              className="border-gray-100 p-5 focus-visible:ring-accent"
+              className="bg-gray-100 px-4 py-6 focus-visible:ring-accent"
             />
             <Input
               type="email"
               name="email"
               placeholder="Votre adresse mail"
-              className="border-gray-100 p-5 focus-visible:ring-accent"
+              className="bg-gray-100 px-4 py-6 focus-visible:ring-accent"
             />
             <Input
               type="password"
               name="password"
               placeholder="Votre mot de passe"
-              className="border-gray-100 p-5 focus-visible:ring-accent"
+              className="bg-gray-100 px-4 py-6 focus-visible:ring-accent"
             />
-            <Button className="bg-accent btn btn-sm mt-4 text-white rounded-full">
+            <Button className="bg-accent hover:bg-accent-secondary btn btn-sm mt-4 text-white rounded-full">
               Créer mon compte
             </Button>
           </div>
 
           <p className="mt-5 text-xs border-b-[1px] border-gray-300 py-2">
-            Write all information about you to connect
+            Remplissez tous les champs pour vous connecter
           </p>
           <div className="mt-4 text-xs text-gray-400 flex justify-between items-center">
             <p>J'ai déjà un compte ?</p>

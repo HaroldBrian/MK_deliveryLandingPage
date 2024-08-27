@@ -32,9 +32,9 @@ const testimonialItems = [
 export const Testimonials = () => {
   return (
     <section className="testimonial bg-testimonials bg-cover bg-right bg-no-repeat py-12 lg:min-h-[595px] lg:py-0">
-      <Fade bottom duration={2000} delay={600} distance="60px">
+      <Fade bottom duration={1500} delay={500} distance="60px">
         <div className="testimonial__container container mx-auto">
-          <Fade bottom duration={2000} delay={900} distance="60px">
+          <Fade bottom duration={1500} delay={700} distance="60px">
             <div className="flex flex-col lg:flex-row items-center gap-x-14">
               <TestimonialBackground />
               <TestimonialItems />

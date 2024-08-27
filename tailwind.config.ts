@@ -14,9 +14,24 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        sm: "768px",
-        md: "992px",
+        // sm: "768px",
+        // md: "992px",
         lg: "1200px",
+
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        // md: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        // lg: "1280px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
       },
     },
     extend: {

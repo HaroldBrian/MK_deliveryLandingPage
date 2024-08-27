@@ -26,7 +26,7 @@ export const Hero = () => {
 const HeroLeft = () => {
   return (
     <div className="hero__text lg:w-[52%] text-center lg:text-left py-6">
-      <Fade top duration={2000} delay={600} distance="60px">
+      <Fade top duration={1500} delay={500} distance="60px">
         <HeroInfo />
         <HeroDL />
       </Fade>
@@ -37,10 +37,10 @@ const HeroLeft = () => {
 const HeroInfo = () => {
   return (
     <>
-      <div className="flex items-center bg-white py-[10px] px-[18px] w-max gap-x-2 mb-[26px] rounded-full mx-auto lg:mx-0">
+      <div className="flex items-center justify-center bg-white py-[10px] px-[18px] w-max gap-x-2 mb-[26px] rounded-full mx-auto lg:mx-0">
         <RiTruckLine className="text-2xl text-accent" />
         <div className="uppercase text-base font-medium text-[#9ab4b7] tracking-[2.24px]">
-          Votre Plateforme de livraison
+          Votre service de livraison
         </div>
       </div>
       <h1 className="h1 mb-6">
@@ -98,46 +98,14 @@ const HeroDL = () => {
 const HeroRight = () => {
   return (
     <div className="hero__img hidden lg:flex max-w-md">
-      <Fade bottom duration={2000} delay={600} distance="60px">
-        <form className="hero__form flex flex-col gap-y-5 bg-black/20 rounded-lg px-6 py-16">
-          <div className="flex flex-col lg:flex-row gap-5">
-            <div className="select relative flex items-center">
-              <div className="absolute right-4">
-                <RiArrowDownSLine className="text-[26px] text-primary" />
-              </div>
-
-              <select className="appearance-none outline-none h-full w-full bg-transparent px-4">
-                <option>Select department</option>
-                <option value="1">Department 1</option>
-                <option value="2">Department 2</option>
-                <option value="3">Department 3</option>
-              </select>
-            </div>
-            <div className="select relative flex items-center">
-              <div className="absolute right-4">
-                <RiArrowDownSLine className="text-[26px] text-primary" />
-              </div>
-
-              <select className="appearance-none outline-none h-full w-full bg-transparent px-4">
-                <option>Select doctor</option>
-                <option value="1">Doctor 1</option>
-                <option value="2">Doctor 2</option>
-                <option value="3">Doctor 3</option>
-              </select>
-            </div>
-          </div>
-          <div className="flex flex-col lg:flex-row gap-5">
-            <input type="text" className="input" placeholder="Full Name" />
-            <input type="text" className="input" placeholder="Phone Number" />
-          </div>
-          <div className="flex flex-col lg:flex-row gap-5">
-            <input type="date" className="input" />
-            <input type="time" className="input" />
-          </div>
-          <button className="btn btn-lg btn-accent self-start" type="submit">
-            Obtenez un Devis
-          </button>
-        </form>
+      <Fade bottom duration={1500} delay={500} distance="60px">
+        <Image
+          alt="Mockup"
+          src="/hero-image.png"
+          width={500}
+          height={500}
+          priority
+        />
       </Fade>
     </div>
   );

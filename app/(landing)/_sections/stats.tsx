@@ -19,7 +19,7 @@ export const Stats = () => {
               delay={(index + 1) * 400}
               distance="100px"
               interval={100}
-              duration={2000}
+              duration={1500}
             >
               <div
                 className="stats__item flex-1 lg:border-r flex flex-col items-center"

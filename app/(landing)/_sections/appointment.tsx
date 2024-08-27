@@ -1,19 +1,18 @@
 import { RiArrowDownSLine } from "@remixicon/react";
 import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
 
 export const Appointment = () => {
   return (
     <section className="appointment section">
       <div className="container mx-auto">
-        <Fade bottom duration={2000} delay={600} distance="60px">
+        <Fade bottom duration={1500} delay={500} distance="60px">
           <h2 className="appointment__title h2 mb-5 lg:mb-[50px] text-center lg:text-left">
             Rejoignez-nous ou appelez nous :{" "}
             <span className="text-accent-secondary">(+237) 697 438 841</span>
           </h2>
         </Fade>
 
-        <Zoom duration={2000} delay={900} distance="60px">
+        <Fade duration={1500} delay={700} distance="60px">
           <form className="appointment__form flex flex-col gap-y-5">
             <div className="flex flex-col lg:flex-row gap-5">
               <div className="select relative flex items-center">
@@ -22,10 +21,10 @@ export const Appointment = () => {
                 </div>
 
                 <select className="appearance-none outline-none h-full w-full bg-transparent px-4">
-                  <option>Select department</option>
-                  <option value="1">Department 1</option>
-                  <option value="2">Department 2</option>
-                  <option value="3">Department 3</option>
+                  <option>Selectionnez un service</option>
+                  <option value="1">Livraison Express</option>
+                  <option value="2">Livraison Standard</option>
+                  <option value="3">Livraison Internationale</option>
                 </select>
               </div>
               <div className="select relative flex items-center">
@@ -34,16 +33,20 @@ export const Appointment = () => {
                 </div>
 
                 <select className="appearance-none outline-none h-full w-full bg-transparent px-4">
-                  <option>Select doctor</option>
-                  <option value="1">Doctor 1</option>
-                  <option value="2">Doctor 2</option>
-                  <option value="3">Doctor 3</option>
+                  <option>Selectionnez un point de relais</option>
+                  <option value="1">Yaoundé 1</option>
+                  <option value="2">Yaoundé 2</option>
+                  <option value="3">Yaoundé 3</option>
                 </select>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-5">
-              <input type="text" className="input" placeholder="Full Name" />
-              <input type="text" className="input" placeholder="Phone Number" />
+              <input type="text" className="input" placeholder="Noms complet" />
+              <input
+                type="text"
+                className="input"
+                placeholder="Numéro de télephone"
+              />
             </div>
             <div className="flex flex-col lg:flex-row gap-5">
               <input type="date" className="input" />
@@ -53,7 +56,7 @@ export const Appointment = () => {
               Créez un Compte Gratuitement
             </button>
           </form>
-        </Zoom>
+        </Fade>
       </div>
     </section>
   );
